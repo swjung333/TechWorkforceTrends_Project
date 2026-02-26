@@ -1,0 +1,13 @@
+Old_Role,New_Role,Transferable_Skills,Skills_Gap,Reskilling_Time_Months,Success_Rate,Companies_Offering
+Customer Support Agent,AI Prompt Engineer,"Communication, Problem-solving, Product Knowledge","Prompt Engineering, API Integration, Testing",3,75,"Salesforce, Zendesk, Intercom"
+Content Writer,AI Content Strategist,"Writing, SEO, Creativity","AI Tools (ChatGPT, Claude), Content Optimization",2,80,"Adobe, HubSpot, Jasper"
+Data Analyst,ML Engineer,"SQL, Python, Statistics","PyTorch/TensorFlow, Deep Learning, MLOps",6,65,"Google, Meta, Microsoft"
+Software Engineer,AI Safety Engineer,"Programming, System Design, Testing","RLHF, AI Alignment, Ethics",4,70,"OpenAI, Anthropic, DeepMind"
+QA Tester,MLOps Engineer,"Testing, CI/CD, Automation","Kubernetes, ML Pipelines, Model Monitoring",5,60,"Databricks, Snowflake, AWS"
+IT Support,Cloud Security Engineer,"Troubleshooting, Networking, Security Basics","Cloud Platforms, IAM, Zero Trust",6,55,"Amazon, Microsoft, Google"
+Graphic Designer,AI Product Designer,"Design Thinking, UI/UX, Tools","AI Integration, Prototyping, User Research",4,72,"Adobe, Figma, Canva"
+Sales Engineer,DevOps Engineer,"Technical Knowledge, Communication","Terraform, Kubernetes, Infrastructure as Code",7,50,"GitLab, HashiCorp, Atlassian"
+Project Manager,AI Product Manager,"Leadership, Roadmapping, Stakeholder Management","AI/ML Fundamentals, Data Analysis",3,78,"Microsoft, Google, Meta"
+Marketing Analyst,Analytics Engineer,"Data Analysis, SQL, Reporting","dbt, Data Modeling, ETL Pipelines",4,68,"Tableau, Looker, dbt Labs"
+Hardware Engineer,Robotics Engineer,"Electronics, System Design, Testing","ROS, Computer Vision, AI Integration",5,65,"Tesla, Boston Dynamics, Waymo"
+Network Engineer,Site Reliability Engineer,"Networking, Troubleshooting, Automation","SRE Practices, Monitoring, Incident Response",5,62,"Google, Netflix, Uber"
