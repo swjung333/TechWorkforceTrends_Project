@@ -30,7 +30,7 @@ create table tech_hiring (
 	salary_max numeric,
 	location varchar(50),
 	country varchar(50),
-	remote_status varchar(50),
+	remote varchar(50),
 	skills_required text,
 	experience_years int,
 	department varchar(50),
@@ -51,60 +51,77 @@ create table career_transitions (
 	companies_offering text
 )
 
---- Create industry_layoffs table
-create table industry_layoffs (
-	industry varchar(50) primary key,
-	total_layoffs int,
-	number_companies int,
-	avg_workforce_percentage numeric,
-	avg_severance_weeks numeric
-)
 
---- Create us_state table
-create table us_state (
-	state varchar(10) primary key,
-	total_layoffs int,
-	number_companies int,
-	percentage_of_usa numeric
-)
+--- Data exploration with NULL check
+select *
+from tech_layoffs
+where (company is null or trim(company) = '')
+or employees_laid_off is null
+or date is null
+or (industry is null or trim(industry) = '')
+or (location is null or trim(location) = '')
+or (country is null or trim(country) = '')
+or (reason is null or trim(reason) = '')
+or (department is null or trim(department) = '')
+or percentage_workforce is null
+or total_employees is null
+or severance_weeks is null
+or (ai_related is null or trim(ai_related) = '')
+or year is null
+or month is null
+or (month_name is null or lower(trim(month_name)) not in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
+or quarter is null
 
---- Create ai_impact table
-create table ai_impact (
-	ai_related varchar(10) primary key,
-	total_layoffs int,
-	number_companies int,
-	percentage numeric
-)
+select *
+from tech_hiring
+where (company is null or trim(country) = '')
+or (role is null or trim(role) = '')
+or number_positions is null
+or date_posted is null
+or salary_min is null
+or salary_max is null
+or (location is null or trim(location) = '')
+or (country is null or trim(country) = '')
+or (remote is null or trim(remote) = '')
+or (skills_required is null or trim(skills_required) = '')
+or experience_years is null
+or (department is null or trim(department) = '')
+or year is null
+or month is null
+or salary_average is null
 
---- Create department_layoffs table
-create table department_layoffs (
-	department varchar(50) primary key,
-	total_affected int,
-	number_events int
-)
+select *
+from career_transitions
+where (old_role is null or trim(old_role) = '')
+or (new_role is null or trim(new_role) = '')
+or (transferable_skills is null or trim(transferable_skills) = '')
+or (skills_gap is null or trim(skills_gap) = '')
+or reskilling_time_months is null
+or success_rate is null
+or (companies_offering is null or trim(companies_offering) = '')
 
---- Create global_layoffs table
-create table global_layoffs (
-	country varchar(50) primary key,
-	total_layoffs int,
-	number_companies int,
-	percentage_of_total numeric
-)
+--- Data exploration with invalid value check
+select *
+from tech_layoffs
+where employees_laid_off < 0
+or percentage_workforce not between 0 and 100
+or total_employees < 0
+or severance_weeks < 0
+or year not between 2025 and 2026
+or month not between 1 and 12
+or quarter not between 1 and 4
 
---- Create severance tables
-create table severance (
-	severance_weeks int primary key,
-	number_companies int,
-	total_employees int
-)
+select *
+from tech_hiring
+where number_positions <= 0
+or salary_min < 0
+or salary_max < salary_min
+or experience_years < 0
+or year not between 2025 and 2026
+or month not between 1 and 12
+or salary_average < 0
 
---- Create layoffs_trend table
-create table layoffs_trend (
-	trend_id serial primary key,
-	year int,
-	month_name varchar(10),
-	quarter int,
-	total_layoffs int,
-	number_events int
-)
-
+select *
+from career_transitions
+where reskilling_time_months < 0
+or success_rate not between 0 and 100
