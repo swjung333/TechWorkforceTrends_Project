@@ -52,7 +52,7 @@ create table career_transitions (
 )
 
 
---- Data exploration with NULL check
+--- Data exploration for NULL check
 select *
 from tech_layoffs
 where (company is null or trim(company) = '')
@@ -70,11 +70,13 @@ or (ai_related is null or trim(ai_related) = '')
 or year is null
 or month is null
 or (month_name is null or lower(trim(month_name)) not in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
+or extract(month from date) != month
+or lower(trim(to_char(date, 'month'))) != lower(trim(month_name)) 
 or quarter is null
 
 select *
 from tech_hiring
-where (company is null or trim(country) = '')
+where (company is null or trim(company) = '')
 or (role is null or trim(role) = '')
 or number_positions is null
 or date_posted is null
@@ -100,7 +102,8 @@ or reskilling_time_months is null
 or success_rate is null
 or (companies_offering is null or trim(companies_offering) = '')
 
---- Data exploration with invalid value check
+
+--- Data exploration for invalid data check
 select *
 from tech_layoffs
 where employees_laid_off < 0
@@ -110,6 +113,7 @@ or severance_weeks < 0
 or year not between 2025 and 2026
 or month not between 1 and 12
 or quarter not between 1 and 4
+or date not between '2025-01-01' and current_date
 
 select *
 from tech_hiring
@@ -119,7 +123,8 @@ or salary_max < salary_min
 or experience_years < 0
 or year not between 2025 and 2026
 or month not between 1 and 12
-or salary_average < 0
+or salary_average not between salary_min and salary_max
+or date_posted not between '2025-01-01' and current_date
 
 select *
 from career_transitions
