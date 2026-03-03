@@ -71,6 +71,7 @@ or year is null
 or month is null
 or (month_name is null or lower(trim(month_name)) not in ('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'))
 or extract(month from date) != month
+or extract(year from date) != year
 or lower(trim(to_char(date, 'month'))) != lower(trim(month_name)) 
 or quarter is null
 
@@ -90,6 +91,8 @@ or experience_years is null
 or (department is null or trim(department) = '')
 or year is null
 or month is null
+or extract(month from date_posted) != month
+or extract(year from date_posted) != year
 or salary_average is null
 
 select *
