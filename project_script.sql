@@ -174,3 +174,12 @@ select
 from tech_layoffs
 group by 1
 order by 1
+
+--- [Q4] Which locations are impacted the most?
+select
+	location,
+	count(distinct company) as company_count
+	sum(employees_laid_off) as total_layoffs
+from tech_layoffs
+group by 2
+order by 3 desc
