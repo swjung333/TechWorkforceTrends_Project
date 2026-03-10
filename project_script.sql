@@ -51,6 +51,19 @@ create table career_transitions (
 	companies_offering text
 )
 
+create view layoffs_to_career_transition as
+select
+	t.company,
+	t.industry,
+	t.employyes_laid_off,
+	c.original_role,
+    c.new_role,
+    c.transferable_skills,
+    c.success_rate,
+    c.severance_weeks
+from tech_layoffs t
+join career_transitions c
+on t.industry = c.industry
 
 --- Data exploration for empty (incl. NULL) and invalid data check
 
@@ -183,3 +196,49 @@ select
 from tech_layoffs
 group by 1
 order by 3 desc
+
+--- [Q5] Which industries are laying off the most people?
+select
+	industry,
+	sum(employees_laid_off) as total_layoffs,
+	avg(employees_laid_off) as average_layoffs,
+	count(*)
+from tech_layoffs
+group by 1
+order by 2 desc
+
+--- [Q6] Is there any company that went out of business?
+select 
+    company, 
+    total_employees
+from tech_layoffs
+where employees_laid_off = total_employees 
+and total_employees > 0
+order by total_employees desc
+
+--- Create joined_career_transitions table
+CREATE VIEW joined_career_transitions AS
+SELECT 
+    t.company,
+    t.industry,
+    t.percentage_workforce,
+    t.severance_weeks,
+    t.ai_related,
+    c.old_role,
+    c.new_role,
+    c.transferable_skills,
+    c.success_rate
+FROM tech_layoffs t
+CROSS JOIN career_transitions c
+
+--- [Q7] Correlation Between Transferable Skills and Transition Success Across AI and Non-AI Layoff Events
+select 
+	success_rate,
+	transferable_skills,
+	count(*) filter (where lower(ai_related) in ('yes', 'partial')) as ai_related_count,
+	count(*) filter (where lower(ai_related) = 'no') as non_ai_related_count
+from joined_career_transitions
+where success_rate >= 70
+group by 1, 2
+order by 2 desc
+
