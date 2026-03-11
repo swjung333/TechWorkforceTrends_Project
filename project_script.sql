@@ -216,29 +216,26 @@ where employees_laid_off = total_employees
 and total_employees > 0
 order by total_employees desc
 
---- Create joined_career_transitions table
-CREATE VIEW joined_career_transitions AS
-SELECT 
-    t.company,
-    t.industry,
-    t.percentage_workforce,
-    t.severance_weeks,
-    t.ai_related,
-    c.old_role,
+--- Create categorized_career_transitions table view
+create view categorized_career_transitions as
+select *,
+	case when lower(new_role) like '%ai%' or lower(new_role) like '%ml%' then 'ai related role'
+	else 'others'
+    end as role_category
+from career_transitions
+
+--- [Q7] Which skills are the most effective to transition into AI related roles compared to other ones?
+select role_category, new_role, transferable_skills, success_rate
+from categorized_career_transitions
+where success_rate >= 60
+order by 1, 4 desc
+
+--- [Q8] Which career transitions offer the most money?
+select
+	c.role_category,
     c.new_role,
-    c.transferable_skills,
-    c.success_rate
-FROM tech_layoffs t
-CROSS JOIN career_transitions c
-
---- [Q7] Correlation Between Transferable Skills and Transition Success Across AI and Non-AI Layoff Events
-select 
-	success_rate,
-	transferable_skills,
-	count(*) filter (where lower(ai_related) in ('yes', 'partial')) as ai_related_count,
-	count(*) filter (where lower(ai_related) = 'no') as non_ai_related_count
-from joined_career_transitions
-where success_rate >= 70
+    avg(t.salary_average) as market_avg_salary
+from categorized_career_transitions c
+join tech_hiring t on lower(c.new_role) = lower(t.role)
 group by 1, 2
-order by 2 desc
-
+order by 3 desc
