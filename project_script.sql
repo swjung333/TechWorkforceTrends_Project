@@ -51,20 +51,6 @@ create table career_transitions (
 	companies_offering text
 )
 
-create view layoffs_to_career_transition as
-select
-	t.company,
-	t.industry,
-	t.employyes_laid_off,
-	c.original_role,
-    c.new_role,
-    c.transferable_skills,
-    c.success_rate,
-    c.severance_weeks
-from tech_layoffs t
-join career_transitions c
-on t.industry = c.industry
-
 --- Data exploration for empty (incl. NULL) and invalid data check
 
 -- tech_layoffs table
@@ -160,12 +146,21 @@ where company in (
 )
 order by 1, 2
 
+--- companies that went out-of-business check
+select 
+    company, 
+    total_employees
+from tech_layoffs
+where employees_laid_off = total_employees 
+and total_employees > 0
+order by total_employees desc
+
 --- [Q1] The layoff percent: which companies are laying off the most people?
 select 
     company, 
     sum(employees_laid_off) as total_layoffs, 
     max(total_employees) as total_employees,
-    (sum(employees_laid_off) * 100.0 / nullif(max(total_employees), 0)) as layoff_percent
+    round(sum(employees_laid_off) * 100.0 / nullif(max(total_employees), 0), 2) as layoff_percent
 from tech_layoffs
 group by 1
 order by 2 desc
@@ -207,35 +202,31 @@ from tech_layoffs
 group by 1
 order by 2 desc
 
---- [Q6] Is there any company that went out of business?
-select 
-    company, 
-    total_employees
-from tech_layoffs
-where employees_laid_off = total_employees 
-and total_employees > 0
-order by total_employees desc
-
 --- Create categorized_career_transitions table view
 create view categorized_career_transitions as
 select *,
 	case when lower(new_role) like '%ai%' or lower(new_role) like '%ml%' then 'ai related role'
 	else 'others'
-    end as role_category
+    	end as role_category
 from career_transitions
 
---- [Q7] Which skills are the most effective to transition into AI related roles compared to other ones?
-select role_category, new_role, transferable_skills, success_rate
+--- [Q6] Which skills are the most effective to transition into AI related roles compared to other ones?
+select
+	role_category,
+	new_role,
+	transferable_skills,
+	success_rate
 from categorized_career_transitions
 where success_rate >= 60
 order by 1, 4 desc
 
---- [Q8] Which career transitions offer the most money?
+--- [Q7] Which career transitions offer the most money?
 select
 	c.role_category,
-    c.new_role,
-    avg(t.salary_average) as market_avg_salary
+    	c.new_role,
+    	round(avg(t.salary_average), 2) as market_avg_salary
 from categorized_career_transitions c
-join tech_hiring t on lower(c.new_role) = lower(t.role)
+join tech_hiring t
+on lower(c.new_role) = lower(t.role)
 group by 1, 2
 order by 3 desc
