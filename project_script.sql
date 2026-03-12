@@ -178,9 +178,10 @@ order by 3 desc
 --- [Q3] The monthly trend: is the situation getting better or worse?
 select 
     date_trunc('month', date) as layoff_month,
-    sum(employees_laid_off) as monthly_total
+    to_char(date, 'month yyyy') as month_year,
+	sum(employees_laid_off) as monthly_total
 from tech_layoffs
-group by 1
+group by 1, 2
 order by 1
 
 --- [Q4] Which locations are impacted the most?
@@ -196,7 +197,7 @@ order by 3 desc
 select
 	industry,
 	sum(employees_laid_off) as total_layoffs,
-	avg(employees_laid_off) as average_layoffs,
+	round(avg(employees_laid_off), 2) as average_layoffs,
 	count(*)
 from tech_layoffs
 group by 1
