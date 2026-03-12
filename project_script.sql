@@ -208,7 +208,7 @@ create view categorized_career_transitions as
 select *,
 	case when lower(new_role) like '%ai%' or lower(new_role) like '%ml%' then 'ai related role'
 	else 'others'
-    	end as role_category
+	end as role_category
 from career_transitions
 
 --- [Q6] Which skills are the most effective to transition into AI related roles compared to other ones?
@@ -224,8 +224,8 @@ order by 1, 4 desc
 --- [Q7] Which career transitions offer the most money?
 select
 	c.role_category,
-    	c.new_role,
-    	round(avg(t.salary_average), 2) as market_avg_salary
+	c.new_role,
+	round(avg(t.salary_average), 2) as market_avg_salary
 from categorized_career_transitions c
 join tech_hiring t
 on lower(c.new_role) = lower(t.role)
