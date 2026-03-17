@@ -153,7 +153,7 @@ select
 from tech_layoffs
 where employees_laid_off = total_employees 
 and total_employees > 0
-order by total_employees desc
+order by 2 desc
 
 --- [Q1] The layoff percent: which companies are laying off the most people?
 select 
@@ -217,7 +217,6 @@ select
 	transferable_skills,
 	success_rate
 from categorized_career_transitions
-where success_rate >= 60
 order by 1, 4 desc
 
 --- [Q7] Which career transitions offer the most money?
@@ -229,4 +228,15 @@ from categorized_career_transitions c
 join tech_hiring t
 on lower(c.new_role) = lower(t.role)
 group by 1, 2
+order by 3 desc
+
+
+--- [Q8] Which department were impacted by layoffs the most?
+select
+	department,
+	count(distinct company) as layoff_companies,
+	sum(employees_laid_off) as total_layoffs,
+	round(avg(percentage_workforce), 2) as avg_laidoff_manpower_percent
+from tech_layoffs
+group by 1
 order by 3 desc
