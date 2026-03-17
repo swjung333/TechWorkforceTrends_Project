@@ -163,8 +163,7 @@ select
     round(sum(employees_laid_off) * 100.0 / nullif(max(total_employees), 0), 2) as layoff_percent
 from tech_layoffs
 group by 1
-order by 2 desc
-limit 10
+order by 4 desc
 
 --- [Q2] The reason: whats the common reason for layoffs
 select 
