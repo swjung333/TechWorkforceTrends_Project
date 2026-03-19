@@ -236,7 +236,7 @@ select
 	department,
 	count(distinct company) as layoff_companies,
 	sum(employees_laid_off) as total_layoffs,
-	round(avg(percentage_workforce), 2) as avg_laidoff_manpower_percent
+	round(avg(percentage_workforce), 2) as avg_layoff_percent
 from tech_layoffs
 group by 1
 order by 3 desc
