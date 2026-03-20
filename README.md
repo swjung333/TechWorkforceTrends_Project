@@ -10,7 +10,7 @@ This project analyzes the state of the tech workforce in 2025–2026 by examinin
 
 ## Dataset and Structure
 
-The dataset was sourced from **Kaggle** *([link to be added](https://www.kaggle.com/datasets/ahsanneural/tech-layoffs-and-hiring-trends-2025-2026?select=tech_layoffs_2025_2026.csv))*, which originally contained **11 CSV files** including **dataset_summary_statistics** (excluded this file from the attachment). Out of these, **3 CSV files** were selected and used to build the database for this project:
+The dataset was sourced from **Kaggle** *(https://www.kaggle.com/datasets/ahsanneural/tech-layoffs-and-hiring-trends-2025-2026?select=tech_layoffs_2025_2026.csv)*, which originally contained **11 CSV files** including **dataset_summary_statistics** (excluded this file from the attachment). Out of these, **3 CSV files** were selected and used to build the database for this project:
 
 | Table | Description |
 |---|---|
