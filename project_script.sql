@@ -231,7 +231,7 @@ group by 1, 2
 order by 3 desc
 
 
---- [Q8] Which department were impacted by layoffs the most?
+--- [Q8] Which departments were impacted by layoffs the most?
 select
 	department,
 	count(distinct company) as layoff_companies,
@@ -239,4 +239,4 @@ select
 	round(avg(percentage_workforce), 2) as avg_layoff_percent
 from tech_layoffs
 group by 1
-order by 3 desc
+order by 4 desc
