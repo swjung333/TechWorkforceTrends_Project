@@ -82,3 +82,21 @@ Groups layoff events by reason and ranks them by total employees affected, revea
 
 **[Q3] The Monthly Trend: Is the situation getting better or worse?**
 Tracks total monthly layoffs from January 2025 to February 2026, using `date_trunc` and `to_char` to generate month-year labels and track layoff progression over time.
+
+**[Q4] Which locations are impacted the most?**
+Aggregates layoffs by location, counting distinct companies and total employees affected per region.
+
+**[Q5] Which industries are laying off the most people?**
+Ranks industries by total layoffs alongside average layoff size and event frequency, revealing both scale and pattern.
+
+**[Q6] Which skills are the most effective to transition into AI-related roles compared to other ones?**
+Utilizes the `categorized_career_transitions` view to identify transferable skills and success rates for both AI and non-AI role transitions.
+
+**[Q7] Which career transitions offer the most money?**
+Joins `categorized_career_transitions` with `tech_hiring` on role name to calculate the average market salary per transition role.
+
+**[Q8] Which departments were impacted by layoffs the most?**
+Groups layoff data by department, counting affected companies and summing total layoffs to identify which departments were most severely impacted by average workforce cut percentage.
+
+---
+
