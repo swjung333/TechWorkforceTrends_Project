@@ -100,3 +100,16 @@ Groups layoff data by department, counting affected companies and summing total 
 
 ---
 
+### 3️⃣ Data Import and Modeling (Power BI)
+
+All 8 SQL queries were imported into Power BI Desktop as well as the 3 raw tables to support DAX measure calculations.
+
+In order to create KPI cards, the following **DAX Measures** are used:
+
+- `Total layoffs = sum('public tech_layoffs'[employees_laid_off])`
+- `Total companies = distinctcount('public tech_layoffs'[company])`
+- `Total industries = distinctcount('public tech_layoffs'[industry])`
+- `Avg severance weeks = round(average('public tech_layoffs'[severance_weeks]), 1)`
+- `Avg reskilling time for career transition = round(average('public career_transitions'[reskilling_time_months]), 1)`
+
+---
