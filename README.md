@@ -113,3 +113,11 @@ In order to create KPI cards, the following **DAX Measures** are used:
 - `Avg reskilling time for career transition = round(average('public career_transitions'[reskilling_time_months]), 1)`
 
 ---
+
+### 4️⃣ Power BI Dashboard
+
+The 3 page dashboard was created to visualize tech workforce trends across 2025-2026. The details of each page are as follows.
+
+#### Page 1: Layoff Overview
+
+Displays the overview of tech layoff activity across companies, industries, departments, locations, and reasons.
