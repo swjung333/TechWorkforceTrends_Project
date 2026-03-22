@@ -121,3 +121,37 @@ The 3 page dashboard was created to visualize tech workforce trends across 2025-
 #### Page 1: Layoff Overview
 
 Displays the overview of tech layoff activity across companies, industries, departments, locations, and reasons.
+
+- **KPI Cards:** Total layoffs, Total companies, Total industries, Avg severance weeks.
+- **Top 10 Companies by Layoffs** — Horizontal bar chart ranked by total employees laid off.
+- **Top 10 Industries by Layoffs** — Column chart showing scale and frequency by sector.
+- **Layoffs by Location** — Treemap showing geographic concentration of layoffs.
+- **Top 10 Layoff Reasons Breakdown** — Donut chart categorizing the dominant reasons behind workforce cuts.
+- **Top 10 Most Affected Departments** — Bar chart revealing which internal departments were cut most frequently.
+
+#### Page 2: Company Layoff Analysis
+
+A closer look at company-level data, examining the severity, scale, and timeline of layoffs.
+
+- **Company Layoff Breakdown** — A table displaying Total Layoffs, Total Employees, and Layoff Percent per company with conditional color formatting applied.
+- **Monthly Layoff Trend** — A Line chart showing the timeline of layoff activity from Jan 2025 to Feb 2026
+- **Distribution of Total Employees vs. Layoff Percentage** — Scatter chart revealing whether large or small companies were proportionally harder hit
+
+#### Page 3: Career Transition Insights
+
+Analyzes career transition pathways (AI-related, or Others) by success rate, Average market salary, and reskilling time.
+
+- **Avg. Reskilling Time for Career Transition** — KPI card showing average months needed to reskill for the career transition
+- **Career Transitions by Success Rate** — Horizontal bar chart comparing transition success rates across all roles, categorized by AI vs. Others category
+- **New Role Avg. Salary & Success Rate Summary** — Table displaying market average salary and success rate per role
+- **Highest Paying Career Transitions** — Column chart ranking roles by average market salary by role category
+
+---
+
+## Key Insights from the Analysis
+
+- **Intel Leads in Total Layoffs:** Intel recorded the highest layoff count at 34,000 employees. However, when ranked by layoff percentage, smaller companies like Twitch (35.71%) and X(Twitter) (30%) cut a far larger proportion of their workforce.
+
+- **Cost Optimization Drives the Most Cuts:** The two dominant reasons for layoffs were cost optimization and restructuring/cost cutting, together accounting for over 55% of all employees laid off. This indicates financial efficiency rather than business failure as the primary driver.
+
+- **Layoff Activity Peaked in August 2025 and January 2026:** Monthly trend data shows two notable spikes at 34K and 37K layoffs respectively, suggesting that the beginning of Q3 and Q1 are when companies typically action their restructuring decisions.
