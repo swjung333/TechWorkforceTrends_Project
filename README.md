@@ -129,6 +129,9 @@ Displays the overview of tech layoff activity across companies, industries, depa
 - **Top 10 Layoff Reasons Breakdown** — Donut chart categorizing the dominant reasons behind workforce cuts.
 - **Top 10 Most Affected Departments** — Bar chart revealing which internal departments were cut most frequently.
 
+<img width="940" height="535" alt="image" src="https://github.com/user-attachments/assets/a756fc2d-ae47-41f2-bc23-5397bff2337e" />
+
+
 #### Page 2: Company Layoff Analysis
 
 A closer look at company-level data, examining the severity, scale, and timeline of layoffs.
@@ -136,6 +139,9 @@ A closer look at company-level data, examining the severity, scale, and timeline
 - **Company Layoff Breakdown** — A table displaying Total Layoffs, Total Employees, and Layoff Percent per company with conditional color formatting applied.
 - **Monthly Layoff Trend** — A Line chart showing the timeline of layoff activity from Jan 2025 to Feb 2026
 - **Distribution of Total Employees vs. Layoff Percentage** — Scatter chart revealing whether large or small companies were proportionally harder hit
+
+<img width="903" height="512" alt="image" src="https://github.com/user-attachments/assets/053c0f1d-c7e0-4d3b-af32-502f6ad1e578" />
+
 
 #### Page 3: Career Transition Insights
 
@@ -145,6 +151,8 @@ Analyzes career transition pathways (AI-related, or Others) by success rate, Ave
 - **Career Transitions by Success Rate** — Horizontal bar chart comparing transition success rates across all roles, categorized by AI vs. Others category
 - **New Role Avg. Salary & Success Rate Summary** — Table displaying market average salary and success rate per role
 - **Highest Paying Career Transitions** — Column chart ranking roles by average market salary by role category
+
+<img width="902" height="510" alt="image" src="https://github.com/user-attachments/assets/6927ca21-b2fa-4fd3-af57-cc0deb7a295f" />
 
 ---
 
