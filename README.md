@@ -155,3 +155,9 @@ Analyzes career transition pathways (AI-related, or Others) by success rate, Ave
 - **Cost Optimization Drives the Most Cuts:** The two dominant reasons for layoffs were cost optimization and restructuring/cost cutting, together accounting for over 55% of all employees laid off. This indicates financial efficiency rather than business failure as the primary driver.
 
 - **Layoff Activity Peaked in August 2025 and January 2026:** Monthly trend data shows two notable spikes at 34K and 37K layoffs respectively, suggesting that the beginning of Q3 and Q1 are when companies typically action their restructuring decisions.
+
+- **Santa Clara, CA is the Most Affected Location:** Silicon Valley (Santa Clara, CA & San Francisco, CA) accounts for the major part of tech layoffs. With Santa Clara accounting for the largest share of total employees laid off, followed by Seattle, WA and San Francisco, CA.
+
+- **Semiconductor and Consulting Industries Hit Hardest:** The Semiconductor industry recorded the highest total layoffs, entirely driven by Intel's 34K workforce reduction, followed by Consulting. This reflects both large-scale company restructuring and enterprise spending pullbacks.
+
+- **AI Safety Engineer Offers the Highest Career Transition Salary:** Among all transition roles, AI Safety Engineer marks the highest average market salary at $247,500, followed by AI Product Manager at $200,000 and MLOps Engineer at $195,000.
