@@ -129,8 +129,7 @@ Displays the overview of tech layoff activity across companies, industries, depa
 - **Top 10 Layoff Reasons Breakdown** — Donut chart categorizing the dominant reasons behind workforce cuts.
 - **Top 10 Most Affected Departments** — Bar chart revealing which internal departments were cut most frequently.
 
-<img width="940" height="535" alt="image" src="https://github.com/user-attachments/assets/a756fc2d-ae47-41f2-bc23-5397bff2337e" />
-
+<img width="902" height="508" alt="image" src="https://github.com/user-attachments/assets/e9e1bf4f-59aa-4880-9496-bade681f84d5" />
 
 #### Page 2: Company Layoff Analysis
 
@@ -141,7 +140,6 @@ A closer look at company-level data, examining the severity, scale, and timeline
 - **Distribution of Total Employees vs. Layoff Percentage** — Scatter chart revealing whether large or small companies were proportionally harder hit
 
 <img width="903" height="512" alt="image" src="https://github.com/user-attachments/assets/053c0f1d-c7e0-4d3b-af32-502f6ad1e578" />
-
 
 #### Page 3: Career Transition Insights
 
