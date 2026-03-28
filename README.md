@@ -167,3 +167,9 @@ Analyzes career transition pathways (AI-related, or Others) by success rate, Ave
 - **Semiconductor and Consulting Industries Hit Hardest:** The Semiconductor industry recorded the highest total layoffs, entirely driven by Intel's 34K workforce reduction, followed by Consulting. This reflects both large-scale company restructuring and enterprise spending pullbacks.
 
 - **AI Safety Engineer Offers the Highest Career Transition Salary:** Among all transition roles, AI Safety Engineer marks the highest average market salary at $247,500, followed by AI Product Manager at $200,000 and MLOps Engineer at $195,000.
+
+- **AI-Related Roles Dominate Both Salary and Success Rate:** All top-performing roles by success rate (≥70%) are AI-related, with AI Content Strategist achieving the highest success rate at 80%. This suggests that reskilling toward AI is both financially and practically the most viable path for laid-off tech workers.
+
+- **Average Reskilling Time is 4.5 Months:** Across all career transition pathways, the average time needed for the laid-off tech workers to reskill and transition into a new role is 4.5 months.
+
+---
