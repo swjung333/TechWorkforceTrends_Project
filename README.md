@@ -1,4 +1,4 @@
-# TechWorkforceTrends_Project (pgAdmin 4 + Power BI)
+# TechWorkforceTrends_Project (PostgreSQL + Power BI)
 Analysis of global tech layoffs and hiring trends (2025-2026) with PostgreSQL and Power BI
 
 
